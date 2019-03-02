@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 1.引入mui的css文件  这个文件带了rem单位 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 2.引入fontAwesome字体图标库的css文件 提供页面中字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 3.引入自己的css文件 -->
+    <link rel="stylesheet" href="./less/index.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="left"></div>
+        <div class="center">
+            <h4>乐淘自写主页</h4>
+        </div>
+        <div class="right">
+            <i class="fa fa-search"></i>
+        </div>
+    </header>
+    <main id="main">
+        <!-- 轮播图 -->
+        <section class="slide mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="./images/banner6.png">
+                    </a>
+                </div>
+                <!-- 第一张 -->
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="./images/banner1.png">
+                    </a>
+                </div>
+                <!-- 第二张 -->
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="./images/banner2.png">
+                    </a>
+                </div>
+                <!-- 第三张 -->
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="./images/banner3.png">
+                    </a>
+                </div>
+                <!-- 第四张 -->
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="./images/banner4.png">
+                    </a>
+                </div>
+                <!-- 第五张 -->
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="./images/banner5.png">
+                    </a>
+                </div>
+                <!-- 第六张 -->
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="./images/banner6.png">
+                    </a>
+                </div>
+                <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="./images/banner1.png">
+                    </a>
+                </div>
+            </div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </section>
+        <!-- 导航条 -->
+        <section class="nav"></section>
+
+    </main>
+    <footer id="footer">
+
+    </footer>
+
+
+
+    <!-- 1.引入mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 2.引入小jq文件zepto 获取元素 发送请求 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 3.引入代码模板 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 4.引入自己的js文件-->
+    <script src="./js//index.js"></script>
+</body>
+
+</html>
