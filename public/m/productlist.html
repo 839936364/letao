@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 1.引入mui的css文件  这个文件带了rem单位 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 2.引入fontAwesome字体图标库的css文件 提供页面中字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 4.引入更好用的swiper -->
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.css">
+    <!-- 3.引入自己的css文件 -->
+    <link rel="stylesheet" href="./less/productlist.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <h4>商品列表</h4>
+        </div>
+        <div class="right">
+        </div>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="mui-scroll-wrapper" id="pullrefresh">
+            <div class="mui-scroll">
+                <!-- 搜索表单 -->
+                <div class="search-form">
+                    <form action="#">
+                        <input type="search" placeholder="请输入要搜索的商品" class="input-search">
+                        <button type="button" class="mui-btn mui-btn-primary btn-search">搜索</button>
+                    </form>
+                </div>
+                <!-- 商品列表 -->
+                <div class="product-list">
+                    <div class="mui-card">
+                        <!--页眉，放置标题-->
+                        <div class="mui-card-header">
+                            <!-- .mui-col-xs-3*4>a[href="#"]{上架时间}>i.fa.fa-angle-down -->
+                            <a href="#" data-sort="2" data-type="time">上架时间<i class="fa fa-angle-down"></i></a>
+                            <a href="#" data-sort="2" class="active" data-type="price">价格<i class="fa fa-angle-down"></i></a>
+                            <a href="#" data-sort="2" data-type="num">销量<i class="fa fa-angle-down"></i></a>
+                            <a href="#" data-sort="2" data-type="discount">折扣<i class="fa fa-angle-down"></i></a>
+                        </div>
+                        <!--内容区-->
+                        <div class="mui-card-content">
+                            <div class="mui-row">
+                                <div class="mui-col-xs-6">
+                                    <!-- 商品容器 -->
+                                    <div class="product">
+                                        <img src="/mobile/images/brand3.png" alt="" class="product-img">
+                                        <p class="product-name">
+                                            李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋
+                                        </p>
+                                        <p class="product-price">
+                                            <span>￥888.99</span>
+                                            <del>￥999.99</del>
+                                        </p>
+                                        <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                    </div>
+                                </div>
+                                <div class="mui-col-xs-6">
+                                    <!-- 商品容器 -->
+                                    <div class="product">
+                                        <img src="/mobile/images/brand3.png" alt="" class="product-img">
+                                        <p class="product-name">
+                                            李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋
+                                        </p>
+                                        <p class="product-price">
+                                            <span>￥888.99</span>
+                                            <del>￥999.99</del>
+                                        </p>
+                                        <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3 active"><a href="index.html" class="active"><i
+                        class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a href="category.html"><i class="fa fa-bars"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a href="cart.html"><i class="fa fa-shopping-cart"></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-user"></i><span>个人中心</span></a></div>
+        </div>
+    </footer>
+
+    <script id="productListTpl" type="text/html">
+        {{each data value}}
+        <div class="mui-col-xs-6">
+                <!-- 商品容器 -->
+                <div class="product">
+                    <img src="{{value.pic[0].picAddr}}" alt="" class="product-img">
+                    <p class="product-name">
+                        {{value.proName}}
+                    </p>
+                    <p class="product-price">
+                        <span>￥{{value.price}}</span>
+                        <del>￥{{value.oldPrice}}</del>
+                    </p>
+                    <button type="button" data-id="{{value.id}}" class="mui-btn mui-btn-primary product-buy">立即购买{{value.num}}</button>
+                </div>
+            </div>
+        {{/each}}
+    </script>
+
+
+
+    <!-- 1.引入mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 2.引入小jq文件zepto 获取元素 发送请求 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 3.引入代码模板 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 5.swiperjs -->
+    <script src="./lib/swiper/js/swiper.js"></script>
+    <!-- 4.引入自己的js文件-->
+    <script src="./js/productlist.js"></script>
+    <script src="./js/common.js"></script>
+</body>
+
+</html>

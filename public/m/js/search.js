@@ -4,6 +4,7 @@ $(function () {
     deleteHistory();
     clearHistory();
     initScroll();
+    gotoProductlist();
 
     function addHistory() {
         $(".btn-search").on('tap', function () {
@@ -37,7 +38,7 @@ $(function () {
             console.log(searchHistory);
             queryHistory();
             $('.input-search').val('');
-
+            location = 'productlist.html?search=' + search + '&time=' + new Date().getTime();
 
         })
     }
@@ -55,15 +56,16 @@ $(function () {
         $('.mui-table-view').html(html);
     }
 
+    var isDelete = false;
     function deleteHistory() {
         $(".mui-card-content ul").on("tap", "li span", function () {
             var index = $(this).data('index');
             var searchHistory = localStorage.getItem("searchHistory");
             searchHistory = JSON.parse(searchHistory);
-            $(this).parent().remove();
-            searchHistory.splice(index,1);
+            searchHistory.splice(index, 1);
             localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
             queryHistory();
+            isDelete = true;
         })
     }
 
@@ -74,7 +76,7 @@ $(function () {
         })
     }
 
-
+    // 初始化区域滚动函数
     function initScroll() {
         mui('.mui-scroll-wrapper').scroll({
             indicators: false, //是否显示滚动条
@@ -82,5 +84,15 @@ $(function () {
         });
     }
 
+    function gotoProductlist() {
+        $(".search-history .mui-table-view").on("tap", "li", function (e) {
+            console.log(this);
+            if (isDelete == false) {
+                var search = $(this).data("search");
+                location = 'productlist.html?search=' + search + '&time=' + new Date().getTime();
+            }
+            isDelete = false;
+        })
+    }
 
 })

@@ -95,11 +95,19 @@
         </div>
     </footer>
     <script id="searchHistoryTpl" type="text/html">
-    {{each list value i}}
-    <li class="mui-table-view-cell">{{value.key}}
-        <span class="mui-badge fa fa-close" data-index="{{i}}"></span>
-    </li>
-    {{/each}}
+        <!-- 判断数组有长度就遍历生成列表 没有长度就显示没有记录 -->
+        {{if list.length > 0}}
+            {{each list value i}}
+                <li class="mui-table-view-cell" data-search="{{value.key}}">
+                    {{value.key}}
+                    <span class="mui-badge fa fa-close btn-delete" data-index="{{i}}"></span>
+                </li>
+            {{/each}}
+        {{else}}
+            <li class="mui-table-view-cell">
+               您当前还没有搜索记录~
+            </li>
+        {{/if}}
     </script>
 
 
@@ -115,6 +123,7 @@
     <script src="./lib/swiper/js/swiper.js"></script>
     <!-- 4.引入自己的js文件-->
     <script src="./js/search.js"></script>
+    <script src="./js/common.js"></script>
 </body>
 
 </html>

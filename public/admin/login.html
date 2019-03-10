@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/login.css">
 </head>
+
 <body>
+    <form action="#" class="form-horizontal">
+        <img class="logo" src="./images/25.png" alt="">
+        <div class="input-group">
+            <span class="input-group-addon">用户名</span>
+            <input type="text" id="username" class="form-control" placeholder="请输入用户名" value="root">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon">密 &nbsp;&nbsp;&nbsp;码</span>
+            <input type="password" id="password" class="form-control" placeholder="请输入密码" value="123456">
+        </div>
+
+        <div class="input-group">
+            <button class="btn btn-primary btn-block btn-login">登录</button>
+        </div>
+    </form>
+
+
+
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/login.js"></script>
 </body>
+
 </html>

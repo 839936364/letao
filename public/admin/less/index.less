@@ -1,0 +1,91 @@
+html,body,main{
+   height: 100%;
+}
+#main{
+    display: flex;
+    .left{
+        width: 200px;
+        background-color: skyblue;
+        .user-info{
+            padding: 30px;
+            img{
+                display: block;
+                height: 140px;
+                width: 140px;
+                border-radius: 50%;
+                border: 10px solid #fff;
+                box-shadow: 0px 0px 2px hotpink;
+            }
+            p{
+                text-align: center;
+                margin-top: 10px;
+                font-size: 20px;
+            }
+        }  
+        .list-group{
+            .list-group-item {
+                background-color: skyblue;
+                border: 0;
+                &.active {
+                    background-color: hotpink;
+                    border-color: hotpink;
+                }
+                &:hover {
+                    color: #fff;
+                    background-color: hotpink;
+                    border-color: hotpink;
+                }
+            }
+            .category-manage {
+                padding-left: 20px;
+            }
+        }
+        
+    }
+    .right{
+        flex: 1;
+        .title{
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            .btn-menu {
+                font-size: 30px;
+                background-color: yellowgreen;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+            .btn-exit {
+                font-size: 16px;
+                width: 60px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 20px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+        }
+        .content{
+            padding: 20px;
+            background-color: #eee;
+            .table{
+                th,td{
+                    border: 1px solid #ccc;
+                    text-align: center;
+                    line-height: 30px;
+                }
+                tbody{
+                    img{
+                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}

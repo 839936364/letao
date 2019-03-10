@@ -1,10 +1,9 @@
-
 $(function () {
     $.ajax({
-        url: "http://localhost:3000/category/queryTopCategory",
+        url: "/category/queryTopCategory",
         success: function (data) {
+            console.log(data);
             var html = template("categoryLeftTpl", data);
-
             $('.category-left ul').html(html);
         }
     })
